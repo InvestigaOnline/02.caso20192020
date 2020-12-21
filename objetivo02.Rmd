@@ -1,0 +1,82 @@
+---
+title: "Objetivo 2<hr>"
+pagetitle: "Objetivo 2"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+## Identificar la frecuencia de uso/consumo de los contenidos digitales (películas, series, videos, documentales) fuera de plataformas de *Video on Demand*.
+
+### Q07
+
+
+```{r echo=FALSE}
+variable <- data$Q07
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q08
+
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=mrset(unvr(..f(Q08_)))) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, 'Q08. Obtención de películas, series, videos, documentales')
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title='Q08. Obtención de películas, series, videos, documentales') %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q09
+
+
+```{r echo=FALSE}
+variable <- mrset(..f(Q09_))
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=mrset(unvr(..f(Q09_)))) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, 'Q09.dispositivos donde ve películas, series, videos, documentales')
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title='Q09.dispositivos donde ve películas, series, videos, documentales') %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+

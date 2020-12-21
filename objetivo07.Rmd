@@ -1,0 +1,78 @@
+---
+title: "Objetivo 7<hr>"
+pagetitle: "Objetivo 7"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+
+## (7) Medir la actitud hacia la tecnología.
+
+### Q22
+
+* 1 - `r var_lab(data$Q22_1)`
+* 2 - `r var_lab(data$Q22_2)`
+* 3 - `r var_lab(data$Q22_3)`
+* 4 - `r var_lab(data$Q22_4)`
+* 5 - `r var_lab(data$Q22_5)`
+* 6 - `r var_lab(data$Q22_6)`
+* 7 - `r var_lab(data$Q22_7)`
+* 8 - `r var_lab(data$Q22_8)`
+* 9 - `r var_lab(data$Q22_9)`
+* 10 -  `r var_lab(data$Q22_10)`
+* 11 -  `r var_lab(data$Q22_11)`
+
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols() %>%
+    tab_cells('|'=unvr(Q22_1)) %>% 
+    tab_stat_cpct(label='Q22_1') %>%
+    tab_cells('|'=unvr(Q22_2)) %>% 
+    tab_stat_cpct(label='Q22_2') %>%
+    tab_cells('|'=unvr(Q22_3)) %>% 
+    tab_stat_cpct(label='Q22_3') %>%
+    tab_cells('|'=unvr(Q22_4)) %>% 
+    tab_stat_cpct(label='Q22_4') %>%
+    tab_cells('|'=unvr(Q22_5)) %>% 
+    tab_stat_cpct(label='Q22_5') %>%
+    tab_cells('|'=unvr(Q22_6)) %>% 
+    tab_stat_cpct(label='Q22_6') %>%
+    tab_cells('|'=unvr(Q22_7)) %>% 
+    tab_stat_cpct(label='Q22_7') %>%
+    tab_cells('|'=unvr(Q22_8)) %>% 
+    tab_stat_cpct(label='Q22_8') %>%
+    tab_cells('|'=unvr(Q22_9)) %>% 
+    tab_stat_cpct(label='Q22_9') %>%
+    tab_cells('|'=unvr(Q22_10)) %>% 
+    tab_stat_cpct(label='Q22_10') %>%
+    tab_cells('|'=unvr(Q22_11)) %>% 
+    tab_stat_cpct(label='Q22_11') %>%
+    tab_pivot(stat_position='inside_columns') %>%
+    drop_rc()
+t1 <- as.datatable_widget(tab001)
+tab002 <- t(tab001)
+t2 <- as.datatable_widget(tab002)
+h1 <- highchart() %>%   
+    hc_title(text = 'Q22 - Actitud hacia la tecnología', style = list(fontSize = "15px", fontWeight = 'bold')) %>% 
+    hc_chart(type = 'bar', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = paste('Q22_',seq(1:11))) %>% 
+    hc_yAxis(visible = TRUE) %>% 
+    hc_tooltip(outside = TRUE, enabled=TRUE) %>% 
+    hc_add_series(round(tab002$`muy en desacuerdo`,2),name = "muy en desacuerdo",showInLegend = T, dataLabels = list(enabled=F), stacking='percent') %>% 
+    hc_add_series(round(tab002$`en desacuerdo`,2),name = "en desacuerdo",showInLegend = T, dataLabels = list(enabled=F), stacking='percent') %>% 
+    hc_add_series(round(tab002$`ni desacuerdo, ni acuerdo`,2),name = "ni desacuerdo, ni acuerdo",showInLegend = T, dataLabels = list(enabled=F), stacking='percent') %>% 
+    hc_add_series(round(tab002$`de acuerdo`,2),name = "de acuerdo",showInLegend = T, dataLabels = list(enabled=F), stacking='percent') %>% 
+    hc_add_series(round(tab002$`muy de acuerdo`,2),name = "muy de acuerdo",showInLegend = T, dataLabels = list(enabled=F), stacking='percent')%>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+```
+
+`r t2`
+
+`r h1`

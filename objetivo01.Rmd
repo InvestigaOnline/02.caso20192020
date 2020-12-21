@@ -1,0 +1,174 @@
+---
+title: "Objetivo 1<hr>"
+pagetitle: "Objetivo 1"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo=FALSE}
+data <- data %>% filter(ESTADO == 1)
+```
+
+
+## Equipamiento del hogar en función de la necesidad
+
+### Q01
+
+El objetivo nº 1 se centraba en analizar el equipamiento de los hogares de residencia del alumno que cursaba estudios universitarios. La primera cuestión que se abordaba era si disponía de una conexión a Internet en su hogar.
+
+
+```{r echo=FALSE}
+variable <- data$Q01
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q02
+
+Posteriormente, se analizaba el tipo de conexión que se disponía en el hogar. Información que venía complementada por la frecuencia de uso de esa conexión
+
+```{r echo=FALSE}
+variable <- data$Q02
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q03
+
+La frecuencia de uso evalúa la el uso de la conexión del hogar, siendo destacable el valor de casi un 90% de los entrevistados usan esa conexión para conectarse a Internet varias veces al día.
+
+```{r echo=FALSE}
+variable <- data$Q03
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q04
+
+Cuestionado el hecho de si se usa la conexión en el móvil los resultadosse pueden observar en la tabla inferior. El 98.4% d ela muestra utiliza la conxión de casa con el móvil. 
+
+```{r echo=FALSE}
+variable <- data$Q04
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q05
+
+Por último, se cuestionaba acerca del tipo de conexión que se utilizaba en el móvil, con el objetivo de conocer el uso de Internet en el móvil., y resulta sorprendente el hecho de que sólo el 10.6% aseguraba trabajar de forma indistinta. Esto nos lleva a pensar en una formulación no correcta de la pregunta, pues el resultado lógico hubiera sido el contrario, dadas las altas tasas de conexión en los hogares.
+
+```{r echo=FALSE}
+variable <- data$Q05
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q06
+
+Por último el euipamiento del hogar...
+
+```{r echo=FALSE}
+tab_hcpct = function(data, item) {
+    eval.parent(substitute(tab_cells(data, "|" = drop_var_labs(item)) %>% tab_stat_cpct(label = var_lab(item), total_row_position='none')))
+}
+tab001 <- data %>%
+    tab_hcpct(Q06_1) %>%
+    tab_hcpct(Q06_2) %>%
+    tab_hcpct(Q06_3) %>%
+    tab_hcpct(Q06_4) %>%
+    tab_hcpct(Q06_5) %>%
+    tab_hcpct(Q06_6) %>%
+    tab_hcpct(Q06_7) %>%
+    tab_hcpct(Q06_8) %>%
+    tab_hcpct(Q06_9) %>%
+    tab_hcpct(Q06_10) %>%
+    tab_pivot(stat_position = "inside_columns") %>% 
+    t()
+tab001 <- set_caption(tab001, 'Q06. Equipamiento')
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y1', 'y2', 'y3', 'y4')
+h1 <- highchart() %>%
+    hc_add_series(data=round(tab001$y1,2), type='bar',dataLabels=list(enabled=TRUE),name='sí, tengo el mío', stacking='percent') %>% 
+    hc_add_series(data=round(tab001$y2,2), type='bar',dataLabels=list(enabled=TRUE),name='sí, compartido', stacking='percent') %>% 
+    hc_add_series(data=round(tab001$y3,2), type='bar',dataLabels=list(enabled=TRUE),name='no tengo', stacking='percent') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title='x') %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+t1
+h1
+```
+

@@ -1,0 +1,576 @@
+---
+title: "Objetivo 6<hr>"
+pagetitle: "Objetivo 6"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+
+## (6) Radiografía de consumo / no consumo.
+
+### Q17_1
+
+```{r echo=FALSE}
+variable <- data$Q17_1
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_2
+
+```{r echo=FALSE}
+variable <- data$Q17_2
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_3
+
+```{r echo=FALSE}
+variable <- data$Q17_3
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_4
+
+```{r echo=FALSE}
+variable <- data$Q17_4
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_5
+
+```{r echo=FALSE}
+variable <- data$Q17_5
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_6
+
+```{r echo=FALSE}
+variable <- data$Q17_6
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_1
+
+```{r echo=FALSE}
+variable <- data$Q17_7
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_1
+
+```{r echo=FALSE}
+variable <- data$Q17_7
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_8
+
+```{r echo=FALSE}
+variable <- data$Q17_8
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_9
+
+```{r echo=FALSE}
+variable <- data$Q17_9
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_10
+
+```{r echo=FALSE}
+variable <- data$Q17_10
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_11
+
+```{r echo=FALSE}
+variable <- data$Q17_11
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q17_12
+
+```{r echo=FALSE}
+variable <- data$Q17_12
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q18
+
+```{r echo=FALSE}
+variable <- data$Q18
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_1
+
+```{r echo=FALSE}
+variable <- data$Q19_1
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_2
+
+```{r echo=FALSE}
+variable <- data$Q19_2
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_3
+
+```{r echo=FALSE}
+variable <- data$Q19_3
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_4
+
+```{r echo=FALSE}
+variable <- data$Q19_4
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_5
+
+```{r echo=FALSE}
+variable <- data$Q19_5
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_6
+
+```{r echo=FALSE}
+variable <- data$Q19_6
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q19_7
+
+```{r echo=FALSE}
+variable <- data$Q19_7
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(variable)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(size='50%') %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+### Q20
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells(Q20_1, Q20_2, Q20_3, Q20_4, Q20_5, Q20_6, Q20_7) %>% 
+    tab_stat_mean(label='media') %>%
+    tab_stat_sd(label='desviación') %>% 
+    tab_stat_max(label='máximo') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'media', 'desviación', 'máximo')
+h1 <- hchart(tab001, 'line', hcaes(x=tab001$x, y=round(tab001$media,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_chart(polar=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q21
+
+* Q21_1`r var_lab(data$Q21_1_1)`
+* Q21_2`r var_lab(data$Q21_2_1)`
+* Q21_3`r var_lab(data$Q21_3_1)`
+* Q21_4`r var_lab(data$Q21_4_1)`
+* Q21_5`r var_lab(data$Q21_5_1)`
+* Q21_6`r var_lab(data$Q21_6_1)`
+
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_1)))) %>% 
+    tab_stat_cpct() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_2)))) %>% 
+    tab_stat_cpct() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_3)))) %>% 
+    tab_stat_cpct() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_4)))) %>% 
+    tab_stat_cpct() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_5)))) %>% 
+    tab_stat_cpct() %>%
+    tab_cells('|a'=unvr(mrset(..f(Q21_6)))) %>% 
+    tab_stat_cpct() %>%
+    tab_pivot(stat_position='inside_columns') %>%
+    drop_rc()
+colnames(tab001) <- c('total','Q21_1','Q21_2','Q21_3','Q21_4','Q21_5','Q21_6')
+tab001 <- t(tab001)
+tab001 <- set_caption(tab001, 'Pago por contenidos')
+#tab001$row_labels <- c(var_lab(data$Q21_1),var_lab(data$Q21_2),var_lab(data$Q21_3),var_lab(data$Q21_4),var_lab(data$Q21_5),var_lab(data$Q21_6))
+as.datatable_widget(tab001)
+```

@@ -1,0 +1,96 @@
+---
+title: "Video on Demand<hr>"
+pagetitle: "Video On Demand"
+subtitle: 'Curso 2019-2020<hr>'
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r include= FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+library(flexdashboard)
+library(lubridate)
+library(dplyr)
+library(tidyr)
+library(expss)
+library(highcharter)
+library(kableExtra)
+data <- read_spss('./data/data.sav')
+```
+
+## Información acerca del proyecto
+
+Ante la necesidad de realizar un estudio acerca de los usos, hábitos y actitudes que tengan los universitarios valencianos respecto de los contenidos digitales, particularmente acerca del uso y consumo de contenidos digitales en las plataformas de video on demand (VoD) y que ha de ser entendido en el contexto global de la sociedad de la información, donde Internet tiene una presencia constante y ubicua, y el ocio, el aprendizaje en la educación/formación y lo laboral se relacionan estrechamente. 
+
+Los usos de estos contenidos están sustentados y mediados por las TIC y por los valores de esta era de la información, postindustrial y de consumo donde resulta difícil desvincular lo digital de Internet, por lo que la solicitud abarca tanto las plataformas de VoD como el uso habitual de la conectividad a la red. Nuestro trabajo será dar al cliente los datos requeridos en función de los objetivos que aquí se señalan.
+
+En investigación de mercados existe una metodología llamada "Estudio de base"; la razón de su nombre es simple, proporciona la información básica sobre un mercado, lo que incluye tanto a consumidores o usuarios como a los que no lo son. Se dice que es el estudio más completo que se realiza con los consumidores o usuarios de un producto o servicio, por ello, a veces es llamado “de hábitos y actitudes” (Usage & Attitude survey, U&A). Particularmente en nuestro ámbito de trabajo, determinamos independientemente los usos y los hábitos. Las actitudes, son analizadas de modo independiente.
+
+### Usos y hábitos
+
+Con el objetivo de describir la forma de consumo de las plataformas, se delimitan tres áreas de trabajo. 
+
+- Conocimiento, que describe el recuerdo de los elementos valorados. 
+- Administración, que identifica la forma de cuenta de los usuarios. 
+- Consumo, que describe el comportamiento del usuario en relación a la plataforma, por ejemplo, por cuánto tiempo y con quién hace uso de VoD. 
+
+Identificamos también los hábitos de consumo (la frecuencia) a partir del conocimiento de los contenidos utilizados y en los dispositivos que se utilizaba.
+
+### Actitudes
+
+Para identificar las actitudes hacia el elemento de trabajo y en particular de la actitud hacia la tecnología usaremos una escala estandarizada y refinada de Rosen et al (2013), con cuatro indicadores:
+
+- Actitudes positivas hacia la tecnología
+- Actitudes negativas hacia la tecnología
+- Ansiedad y dependencia
+- Preferencia por la actividad multitarea
+
+Estos indicadores, permitirán conocer si existe algún efecto diferenciado en el hábito y en el uso de las plataformas y/o contenidos digitales y clasificar a los individuos. 
+
+Así las áreas de trabajo a desarrollar en la investigación serían:
+
+- conocimiento de las plataformas de VoD[^nota1],
+- penetración,
+- forma de suscripción,
+- cómo y cuándo se usan las plataformas y otros contenidos digitales relacionados,
+- con qué tecnología y equipamiento en el hogar,
+- qué actitud presenta el individuo ante la tecnología (objetivo de clasificación)
+
+## Ficha técnica del estudio
+
+```{r}
+
+ficha <-
+    data.frame (
+        dato = c(
+            'Universo',
+            'Ámbito',
+            'Método',
+            'Herramienta',
+            'Administración',
+            'Muestreo',
+            'Muestra',
+            'Trabajo de campo',
+            'Software de recogida',
+            'Software de análisis',
+            'Tasa de respuesta',
+            'Trabajo desarrollado con fines académicos'
+        ),
+        descripción = c(
+            'Universitarios residentes en Valencia de entre 18 y 35 años',
+            'Valencia y provincia',
+            'Encuesta cuantitativa',
+            'Cuestionario estructurado',
+            'CAWI',
+            'No probabilístico, conveniencia',
+            'Diseñada: 200<br>Efectiva: 127',
+            'Anticipo:en noviembre y diciembre de 2019<br>Ejecución real prioritariamente en febrero de 2020',
+            '<a href="https://www.tesigandia.com">Integra -  TESI</a>',
+            'R - <a href="https://www.investigaonline.com">InvestigaOnline.com</a>',
+            '25.7%',
+            'Universitat Católica de Valencia (ADE - Plan de Marketing)<br>Universitat de València (Máster en Marketing e Investigación de Mercados)'
+        )
+    )
+kableExtra::kbl(ficha, escape=FALSE) %>% kable_styling(bootstrap_options = c("striped", "hover", 'condensed'), full_width = F)
+```
+[^nota1]:  (Video on Demand)

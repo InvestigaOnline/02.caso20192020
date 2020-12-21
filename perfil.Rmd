@@ -1,0 +1,87 @@
+---
+title: "Perfil de la muestra<hr>"
+pagetitle: "Perfil"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+
+```{r echo=FALSE}
+data <- data %>% filter(ESTADO == 1)
+```
+
+
+## Perfil del entrevistado y su hogar
+
+Para determinar diferencias y clasificación del individuo entrevistado, y dado el tipo de estudio en el que nos localizamos que solo alcanzaba a individuos que cursaban estudios universitarios, entre 18 y 34 años, se utilizamos la EDAD, el SEXO y el centro universitario de referencia el que estudiaba el entrevistado.  
+
+
+### Edad
+
+```{r echo=FALSE}
+tab001 <- data %>% 
+      tab_cols(total(label='casos')) %>% 
+      tab_cells('|'=unvr(S02CUO)) %>% 
+      tab_stat_cpct(total_row_position='none') %>% 
+      tab_pivot() %>% 
+      drop_rc()
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title='edad') %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+
+### Sexo
+
+
+
+```{r echo=FALSE}
+tab001 <- data %>% 
+      tab_cols(total(label='casos')) %>% 
+      tab_cells('|'=unvr(S03)) %>% 
+      tab_stat_cpct(total_row_position='none') %>% 
+      tab_pivot() %>% 
+      drop_rc()
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title='sexo') %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+
+
+
+### Centro universitario
+
+
+```{r echo=FALSE}
+tab001 <- data %>% 
+      tab_cols(total(label='casos')) %>% 
+      tab_cells('|'=unvr(Q00C)) %>% 
+      tab_stat_cpct(total_row_position='none') %>% 
+      tab_pivot() %>%
+      tab_sort_desc() %>% 
+      drop_rc()
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title='centro') %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```

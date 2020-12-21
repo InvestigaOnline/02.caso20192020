@@ -1,0 +1,16 @@
+{
+    "dialog-state": {
+        "query": "stacked",
+        "path": "~/_datos/19.highcharter",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [
+            "*.r",
+            "*.R"
+        ],
+        "excludeFilePatterns": [],
+        "resultsCount": 0,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}

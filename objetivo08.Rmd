@@ -1,0 +1,84 @@
+---
+title: "Objetivo 8<hr>"
+pagetitle: "Objetivo 8"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r include= FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+## (8) Conocer la notoriedad de los operadores de VoD en España.
+
+### Notoriedad de las plataformas
+
+### Q24 - Notoriedad espontánea
+
+```{r echo=FALSE}
+variable <- data$Q24COD_1
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q24COD_)))) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc() %>% 
+    tab_sort_desc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE)) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q25 - Notoriedad total (espontánea + sugerida)
+
+```{r echo=FALSE}
+variable <- data$Q25_1
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q25_)))) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc() %>% 
+    tab_sort_desc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y,2)), dataLabels=list(enabled=TRUE)) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q25 - Notoriedad (base total respuestas)
+
+```{r echo=FALSE}
+variable <- 'Notoriedad acumuladoa o total'
+tab001 <- data %>%
+    tab_cols(total(label='casos')) %>% 
+    tab_cells('|'=unvr(mrset(Q24COD_1,Q24COD_2,Q24COD_3,Q25_1,Q25_2,Q25_3,Q25_4,Q25_5,Q25_6,Q25_7,Q25_8,Q25_9,Q25_10,Q25_11,Q25_12,Q25_13,Q25_14,Q25_15,Q25_16))) %>% 
+    tab_stat_cpct_responses(total_row_position='none') %>% 
+    tab_pivot() %>% 
+    drop_rc() %>%
+    tab_sort_desc()
+tab001 <- set_caption(tab001, var_lab(variable))
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- hchart(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE)) %>% 
+  hc_yAxis(title='casos') %>% 
+  hc_xAxis(title=variable) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```

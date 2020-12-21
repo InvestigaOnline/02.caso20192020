@@ -1,0 +1,354 @@
+---
+title: "Objetivo 10<hr>"
+pagetitle: "Objetivo 10"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r include= FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+## (10) Identificar la frecuencia de uso/consumo de las plataformas VoD de suscripción
+
+### Q27
+
+```{r echo=FALSE}
+variable <- 'Frecuencia de uso'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(Q27_2)) %>% 
+    tab_stat_cpct(total_row_position='none', label='amazon') %>% 
+    tab_cells('|'=unvr(Q27_8)) %>% 
+    tab_stat_cpct(total_row_position='none', label='hbo') %>% 
+    tab_cells('|'=unvr(Q27_9)) %>% 
+    tab_stat_cpct(total_row_position='none', label='movistar') %>% 
+    tab_cells('|'=unvr(Q27_12)) %>% 
+    tab_stat_cpct(total_row_position='none', label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() %>% 
+    t()
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y1', 'y2', 'y3', 'y4', 'y5', 'y6')
+h1 <- 
+  hchart(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y1,1)), name='diariamente', dataLabels=list(enabled=TRUE), stacking='percent') %>% 
+    hc_add_series(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y2,1)), name='semanalmente', dataLabels=list(enabled=TRUE), stacking='percent') %>% 
+    hc_add_series(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y3,1)), name='mensualmente', dataLabels=list(enabled=TRUE), stacking='percent') %>% 
+    hc_add_series(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y4,1)), name='no todos los meses', dataLabels=list(enabled=TRUE), stacking='percent') %>% 
+    hc_add_series(tab001, 'bar', hcaes(x=tab001$x, y=round(tab001$y5,1)), name='no uso', dataLabels=list(enabled=TRUE), stacking='percent') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+#lista <- list(t1,h1)
+#hw_grid(lista, ncol=2)
+t1
+h1
+```
+
+### Q28
+
+```{r echo=FALSE}
+variable <- 'Plataformas dispositivo de uso'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q28_2_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='amazon') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='amazon') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q28_8_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='hbo') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='hbo') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q28_9_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='movistar') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='movistar') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q28_12_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='netflix') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q29
+
+```{r echo=FALSE}
+variable <- 'Contenidos'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q29_2_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='amazon') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='amazon') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q29_8_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='hbo') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='hbo') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q29_9_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='movistar') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='movistar') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q29_12_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='netflix') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q30
+
+```{r echo=FALSE}
+variable <- 'Contenidos'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q30_2)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='amazon') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='amazon') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q30_8_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='hbo') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='hbo') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q30_9_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='movistar') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='movistar') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q30_12_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() 
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), dataLabels=list(enabled=TRUE), innerSize='75%')%>% 
+    hc_title(text='netflix') %>% 
+    hc_yAxis(title='casos') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q31
+
+```{r echo=FALSE}
+variable <- 'Tiempo dedicado a ver plataformas a la semana'
+
+highchart() %>%
+    hc_chart(type = "solidgauge") %>%
+    hc_title(text=variable) %>% 
+    hc_subtitle(text='horas de media') %>% 
+    hc_pane(startAngle = -90,endAngle = 90,background = list(outerRadius = '100%',innerRadius = '60%',shape = "arc")) %>%
+    hc_tooltip(enabled = FALSE) %>% 
+    hc_yAxis(lineWidth = 0,minorTickWidth = 0,tickAmount = 0,min = 0,max = 150,labels = list(y = 26, style = list(fontSize = "12px"))) %>%
+    hc_add_series(data = round(mean(data$Q31, na.rm=TRUE),1), dataLabels = list(y = -50,borderWidth = 0,useHTML = TRUE,style = list(fontSize = "40px"))) %>% 
+    hc_size(height = 300)
+```
+
+
+### Q32 
+
+```{r echo=FALSE}
+variable <- 'Tiempo por plataforma'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(Q32_2)) %>% 
+    tab_stat_mean(label='amazon') %>% 
+    tab_cells('|'=unvr(Q32_8)) %>% 
+    tab_stat_mean(label='hbo') %>% 
+    tab_cells('|'=unvr(Q32_9)) %>% 
+    tab_stat_mean(label='movistar') %>% 
+    tab_cells('|'=unvr(Q32_12)) %>% 
+    tab_stat_mean(label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() %>% 
+    t()
+
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), name='media distribución personal', dataLabels=list(enabled=TRUE), innerSize='60%') %>%
+    hc_colors(colors=c('olivedrab','black','skyblue','red')) %>% 
+    hc_yAxis(title='% horas') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```

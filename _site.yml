@@ -1,0 +1,53 @@
+name: "IO Video on Demand"
+navbar:
+  title: "VoD 2019-2020"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "Perfil"
+      href: perfil.html
+    - text: "Objetivos ..."
+      icon: fa-info-circle
+      menu:
+        - text: "Objetivo 1"
+          href: objetivo01.html
+        - text: "Objetivo 2"
+          href: objetivo02.html
+        - text: "Objetivo 3"
+          href: objetivo03.html
+        - text: "Objetivo 4"
+          href: objetivo04.html
+        - text: "Objetivo 5"
+          href: objetivo05.html
+        - text: "Objetivo 6"
+          href: objetivo06.html
+        - text: "Objetivo 7"
+          href: objetivo07.html
+        - text: "Objetivo 8"
+          href: objetivo08.html
+        - text: "Objetivo 9"
+          href: objetivo09.html
+        - text: "Objetivo 10"
+          href: objetivo10.html
+        - text: "Objetivo 11"
+          href: objetivo11.html
+        - text: "-------------------------------------"
+        - text: "Pruebas t"
+          href: otros1.html
+        - text: "Pruebas chi-1"
+          href: otros2.html
+        - text: "Pruebas chi-2"
+          href: otros3.html
+  right:
+    - text: "Acerca de ..."
+      icon: fa-question-circle
+      href: about.html
+    - text: "InvestigaOnline.com"
+      href: "https://www.investigaonline.com"
+output:
+  html_document:
+    theme: united
+    includes:
+      in_header: header.html
+      after_body: footer.html

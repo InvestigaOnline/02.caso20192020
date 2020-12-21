@@ -1,0 +1,120 @@
+---
+title: "Objetivo 11<hr>"
+pagetitle: "Objetivo 11"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r include= FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+```
+
+## (11) Comprender los factores de suscripción y sus aspectos relevantes
+
+### Net Promoter Score
+
+```{r echo=FALSE}
+variable <- 'Net Promoter Score por plataforma'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(QNPSVALUE_2)) %>% 
+    tab_stat_mean(label='amazon') %>% 
+    tab_cells('|'=unvr(QNPSVALUE_8)) %>% 
+    tab_stat_mean(label='hbo') %>% 
+    tab_cells('|'=unvr(QNPSVALUE_9)) %>% 
+    tab_stat_mean(label='movistar') %>% 
+    tab_cells('|'=unvr(QNPSVALUE_12)) %>% 
+    tab_stat_mean(label='netflix') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc() %>% 
+    t()
+tab001 <- set_caption(tab001, variable)
+
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('plataforma', 'nps')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$plataforma, y=round(tab001$nps,0)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='NPS', min=-100, max=100) %>%
+  hc_colors(colors=c('olivedrab','black','skyblue','red')) %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Plataforma favorita
+
+```{r echo=FALSE}
+variable <- 'Plataforma favorita'
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(Q33)) %>% 
+    tab_stat_cpct(total_row_position='none') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, variable)
+
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('plataforma', 'pct')
+h1 <- hchart(tab001, 'column', hcaes(x=tab001$plataforma, y=round(tab001$pct,1)), dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>% 
+  hc_yAxis(title='NPS') %>%
+  hc_colors(colors=c('olivedrab','black','skyblue','red', 'silver')) %>% 
+  hc_xAxis(title=var_lab(variable)) %>% 
+  hc_exporting(enabled=TRUE) %>% 
+  hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+```
+
+### Q34 Insights o likes hacia las plataforma de VoD
+
+
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q34ACOD_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='casos') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), name='likes con las plataformas en general', dataLabels=list(enabled=TRUE), innerSize='60%') %>%
+    hc_yAxis(title='% horas') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+```
+
+
+### Q34 Insights o dislikes hacia las plataforma de VoD
+
+
+```{r echo=FALSE}
+tab001 <- data %>%
+    tab_cols(total(label='|')) %>% 
+    tab_cells('|'=unvr(mrset(..f(Q34BCOD_)))) %>% 
+    tab_stat_cpct(total_row_position='none', label='casos') %>% 
+    tab_pivot(stat_position='inside_columns') %>% 
+    drop_rc()
+tab001 <- set_caption(tab001, variable)
+t1 <- as.datatable_widget(tab001)
+colnames(tab001) <- c('x', 'y')
+h1 <- 
+  hchart(tab001, 'pie', hcaes(x=tab001$x, y=round(tab001$y,1)), name='dislikes con las plataformas en general', dataLabels=list(enabled=TRUE), innerSize='60%') %>%
+    hc_yAxis(title='% horas') %>% 
+    hc_xAxis(title=variable) %>% 
+    hc_exporting(enabled=TRUE) %>% 
+    hc_credits(enabled=TRUE, text = 'InvestigaOnline.com',href='https://www.investigaonline.com')
+lista <- list(t1,h1)
+hw_grid(lista, ncol=2)
+
+```
+
+

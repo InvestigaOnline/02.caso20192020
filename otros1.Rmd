@@ -1,0 +1,600 @@
+---
+title: "Pruebas inferenciales t student<hr>"
+pagetitle: "Pruebas t"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo=FALSE}
+data <- data %>% filter(ESTADO == 1)
+```
+
+
+```{r echo=FALSE}
+val_lab(data$S02CUO) <- c('18-25'=2, '26-34'=3)
+val_lab(data$S03) <- c('hombre'=1, 'mujer'=2)
+val_lab(data$Q33) <- c('amazon'=2,'hbo'=8,'movistar'=9,'netflix'=12,'ninguna'=99)
+```
+
+### ¿Existen diferencias en media entre los diferentes grupos (columnas) en ...? 
+
+<hr>
+
+
+### Q20 - Pago por adquisición de ...
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_1)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_2)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_3)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_4)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_5)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_6)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q20_7)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+### Q22 - Grado de acuerdo con ...
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_1,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_2,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_3,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_4,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_5,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_6,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_7,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_8,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_9,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_10,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q22_11,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+### Q23 - Actitud hacia la tecnología
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_1,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_2,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_3,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_4,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_5,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_6,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_7,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_8,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_9,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_10,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_11,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_12,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_13,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_14,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_15,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(na_if(Q23_16,gt(5)))%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+### Net Promoter Score plataforma
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(QNPSVALUE_2)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(QNPSVALUE_8)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(QNPSVALUE_9)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(QNPSVALUE_12)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+### Q30 - Horas semanales
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q31)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+### Porcentaje de horas semanales por plataforma
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q32_2)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q32_8)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q32_9)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+    tab_cols(S03, S02CUO, Q33)%>%
+    tab_cells(Q32_12)%>%
+    tab_stat_mean_sd_n()%>%
+    tab_last_sig_means()%>%
+    tab_pivot()%>%
+    drop_rc())
+```
+
+<hr>
+

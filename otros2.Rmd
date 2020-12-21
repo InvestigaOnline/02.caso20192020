@@ -1,0 +1,1117 @@
+---
+title: "Pruebas inferenciales chi square<hr>"
+pagetitle: "Pruebas ChiSq"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r echo=FALSE}
+data <- data %>% filter(ESTADO == 1)
+```
+
+
+```{r echo=FALSE}
+val_lab(data$S02CUO) <- c('18-25'=2, '26-34'=3)
+val_lab(data$S03) <- c('hombre'=1, 'mujer'=2)
+val_lab(data$Q33) <- c('amazon'=2,'hbo'=8,'movistar'=9,'netflix'=12,'ninguna'=99)
+```
+
+### Cursos Universitarios
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q00B)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Centros Universitarios
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q00C)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Conexión a Internet
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q01)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Tipo de conexión
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q02)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Frecuencia de conexión
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q03)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Disposición de móvil personal
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q04)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Uso de internet a través del móvil
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q05)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Disposición de dispositivos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_1)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_2)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_3)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_4)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_5)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_6)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_7)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_8)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_9)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q06_10)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Frecuencia ve películas, series, videos y/o documentales
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q07)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Forma de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q08_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Dispositivo de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q09_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Frecuencia lee contenidos, mira páginas web, blogs, foros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q10)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Dispositivo utilizado para leer contenidos, mirar páginas web, blogs, foros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q11_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Frecuencia escribe, comenta, comparte contenidos creados por usted en páginas web, blogs, foros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q12)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Dispositivo usado para escribir, comentar, compartir contenidos creados por usted en páginas web, blogs, foros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q13_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Fecuencia utiliza redes sociales (mirar, leer, escribir, compartir, subir fotos en Facebook, Twiter, Instagram, etc.)
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q14)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Dispositivo utilizado para redes sociales (mirar, leer, escribir, compartir, subir fotos en Facebook, Twiter, Instagram, etc.)
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q15_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Razones por las que no realiza estas actividades
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q16_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Posición acerca de uso de contenidos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_1)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_2)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_3)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_4)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_5)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_6)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_7)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_8)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_9)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_10)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_11)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q17_12)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Problemas acceso
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q18)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Pago por adquisición
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_1)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_2)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_3)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_4)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_5)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_6)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q19_7)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Tipo de pago preferido
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_1_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_2_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_3_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_4_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_5_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q21_6_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Plataformas recuerda (notoriedad espontánea total)
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q24COD_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Plataformas conoce (notoriedad sugerida / ayudada)
+
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q25_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Suscripción a plataformas
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q26_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Amazon
+
+#### Administración
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q26B_2)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Modo de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q26C_2_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Frecuencia visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q27_2)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Dispositivos utilizados
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q28_2_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Contenidos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q29_2_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Géneros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q30_2_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### HBO
+
+#### Administración
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q26B_8)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Modo de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q26C_8_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Frecuencia visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q27_8)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Dispositivos utilizados
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q28_8_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Contenidos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q29_8_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Géneros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q30_8_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Movistar
+
+#### Administración
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q26B_9)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Modo de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q26C_9_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Frecuencia de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q27_9)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Dispositivos utilizados
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q28_9_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Contenidos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q29_9_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Géneros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q30_9_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+### Netflix
+
+#### Administración
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q26B_12)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Modo de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q26C_12_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Frecuencia de visualización
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(Q27_12)%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Dispositivos utilizados
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q28_12_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Contenidos
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q29_12_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
+#### Géneros
+
+```{r echo=FALSE}
+as.datatable_widget(data %>%
+	tab_cols(total(),S03, S02CUO, Q33)%>%
+	tab_cells(mrset(..f(Q30_12_)))%>%
+	tab_stat_cases()%>%
+	tab_last_sig_cases()%>%
+	tab_pivot()%>%
+	drop_rc())
+```
+
+<hr>
+
