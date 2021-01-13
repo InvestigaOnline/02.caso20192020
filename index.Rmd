@@ -6,18 +6,6 @@ editor_options:
   chunk_output_type: inline
 ---
 
-```{r include= FALSE}
-knitr::opts_chunk$set(echo = FALSE, comment = NA)
-library(flexdashboard)
-library(lubridate)
-library(dplyr)
-library(tidyr)
-library(expss)
-library(highcharter)
-library(kableExtra)
-data <- read_spss('./data/data.sav')
-```
-
 ## Información acerca del proyecto
 
 Ante la necesidad de realizar un estudio acerca de los usos, hábitos y actitudes que tengan los universitarios valencianos respecto de los contenidos digitales, particularmente acerca del uso y consumo de contenidos digitales en las plataformas de video on demand (VoD) y que ha de ser entendido en el contexto global de la sociedad de la información, donde Internet tiene una presencia constante y ubicua, y el ocio, el aprendizaje en la educación/formación y lo laboral se relacionan estrechamente. 
