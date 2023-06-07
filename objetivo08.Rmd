@@ -7,7 +7,7 @@ editor_options:
 ---
 
 ```{r include= FALSE}
-knitr::opts_chunk$set(echo = FALSE, comment = NA)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
 ```
 
 ## (8) Conocer la notoriedad de los operadores de VoD en España.
