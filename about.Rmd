@@ -3,6 +3,17 @@ title: "Acerca de este documento"
 pagetitle: "Acerca de..."
 ---
 
+```{r include= FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+library(flexdashboard)
+library(lubridate)
+library(dplyr)
+library(tidyr)
+library(expss)
+library(highcharter)
+library(kableExtra)
+data <- read_spss('data.sav')
+```
 Este es el resultado del plan de análisis planteado para el caso del año 2019-2020, preparado y ejecutado por los alumnos del grado de **ADE** en la asignatura de **Plan de Marketing** de la **Universidad Católica de València** y el **Máster en Marketing e Investigación de Mercados** de la **Universitat de València**, bajo la dirección del profesor de la asignatura, Roberto Gil-Saura.
 
 La planificación, diseño y ejecución del trabajo de campo y análisis se ha realizado de forma académica y circunscrito a la dinámica de trabajo de ambas asignaturas por los alumnos.
